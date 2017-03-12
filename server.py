@@ -9,10 +9,10 @@ def tcplink(sock,addr):
 	while True:
 		data=sock.recv(2048)
 		time.sleep(1)
-		if not data or data.decode('utf-8') == 'exit':
+		if not data:
 			break
 		print 'receive %s: %s' % (str(type(data)), data.decode('utf-8'))
-		sock.send(('Hello, %s!' % data.decode('utf-8')).encode('utf-8'))
+		sock.send(('Hello, %s! length: %d' % (str(type(data)), len(str(type(data))))))
 	sock.close()
 	print "Connection from %s closed" % str(addr)
 
