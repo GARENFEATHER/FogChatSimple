@@ -20,3 +20,11 @@ words.appendChild(pic)
 afterWords=coreContent.createTextNode(' AND SAY NOTHING')
 words.appendChild(afterWords)
 print coreContent.toprettyxml(indent='')
+
+double=coreContent.createElement('again')
+douCon=coreContent.createTextNode('ISAY: ')
+double.appendChild(douCon)
+douCon=coreContent.createTextNode('youidot')
+double.appendChild(douCon)
+
+print double.toprettyxml(indent='').replace('\n','')
